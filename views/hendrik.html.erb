@@ -1,0 +1,29 @@
+<html>
+	<body>
+		<div>
+      <% x = [8, 2, 6, 4, 9, 3, 7, 1, 5]%>
+      <h3>This is an unsorted list, created from an array</h3>
+      <ul>
+        <% x.each do |i|%>
+          <li><%= i %></li>
+        <% end %>
+      </ul>
+
+      <h3>This is an sorted list, created from an array</h3>
+      <ul>
+        <% x.sort.each do |i|%>
+          <li><%= i %></li>
+        <% end %>
+      </ul>
+
+      
+      <h3>This is an sorted list with strings, created from an array</h3>
+      <ul>
+        <% x.sort.each do |i|%>
+          <li>Number <%=x.index(i) + 1%> is: <%=i%></li>
+        <% end %>
+      </ul>
+
+		</div>
+	</body>
+</html>
