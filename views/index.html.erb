@@ -9,4 +9,27 @@
   <%= @name %>
 </p>
 <p>pipifax</p>
+<h1>I'm kidding</h1>
+<%= @request.query.inspect %>
 
+
+<h1>FORM</h1>
+
+ <% if @request.query['first_name'] && !@request.query['first_name'].empty? %>
+    Hello there <%= @request.query['first_name'] %>
+  <% else %>
+    Enter thy name
+  <% end %>
+
+<form method='post' action="<%= @request.path %>">
+        First name: <input type="text" name="first_name" placeholder='first name'/><br />
+        <input type="submit" value="Submit" />
+    </form>
+
+
+<form method='post' action="<%= @request.path %>">
+ Gender: <br>
+<input type="radio" name="sex" value="male">Male<br>
+<input type="radio" name="sex" value="female">Female
+</form>
+<%= @request.query['sex'] %>
